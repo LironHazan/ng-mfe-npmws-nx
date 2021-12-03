@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "projects": {
+    "feature-app": {
+      "root": "packages/feature-app"
+    },
+    "host-app": {
+      "root": "packages/host-app"
+    }
+  }
+}

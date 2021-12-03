@@ -1,7 +1,16 @@
 {
   "name": "my-workspaces-playground-project",
   "workspaces": [
-    "packages/ng-app-one",
-    "packages/ng-app-two"
-  ]
+    "packages/host-app",
+    "packages/feature-app"
+  ],
+  "dependencies": {
+    "ws": "^8.3.0"
+  },
+  "devDependencies": {
+    "@nrwl/workspace": "latest",
+    "@nrwl/cli": "latest",
+    "@nrwl/tao": "latest",
+    "typescript": "~4.4.3"
+  }
 }

@@ -1,0 +1,13 @@
+###Starting a monorepo with npm workspaces:
+
+- Init an npm workspace projects (see readme for instructions)
+- Inside packages I generated 2 angular apps using the angular cli (removed the generated node_modules of each app)
+- Run: ``npm i ws`` To install all dependencies 
+- Run: ``npm start --w=packages/feature-app`` just for testing ability to start one app seperatly 
+- NOTE - can't start both apps using ``npm start ws``, Let's integrate NX
+
+### Integrating the NX building tool
+- Followed the [Adding Nx to Lerna/Yarn/PNPM Workspace
+  ](https://nx.dev/l/a/migration/adding-to-monorepo) guide 
+- Run ``npx add-nx-to-monorepo`` 
+- Had to upgrade the typescript version
