@@ -1,0 +1,7 @@
+{
+  "name": "my-workspaces-playground-project",
+  "workspaces": [
+    "packages/ng-app-one",
+    "packages/ng-app-two"
+  ]
+}
