@@ -2,3 +2,5 @@
 node_modules
 packages/feature-app/.angular
 packages/host-app/.angular
+
+.angular
