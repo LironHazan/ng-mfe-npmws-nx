@@ -12,18 +12,20 @@ const path = require("path");
 * This NX_TSCONFIG_PATH environment variable is set by the @nrwl/angular:webpack-browser and it contains
 * the location of the generated temporary tsconfig file.
 */
-const tsConfigPath = process.env.NX_TSCONFIG_PATH ?? path.join(__dirname, '../../tsconfig.base.json');
+//const tsConfigPath = process.env.NX_TSCONFIG_PATH ?? path.join(__dirname, '../../tsconfig.base.json');
 
 const workspaceRootPath = path.join(__dirname, '../../');
 const sharedMappings = new mf.SharedMappings();
-sharedMappings.register(tsConfigPath, [
-  /* mapped paths to share */
-], workspaceRootPath);
+sharedMappings.register(path.join(__dirname, './tsconfig.json'), [
+  workspaceRootPath
+]);
+
+console.log(sharedMappings)
 
 module.exports = {
   output: {
     uniqueName: "ft1_app",
-    publicPath: "auto",
+    publicPath: "http://localhost:4201/",
   },
   optimization: {
     runtimeChunk: false,
@@ -34,18 +36,25 @@ module.exports = {
       ...sharedMappings.getAliases(),
     },
   },
+  // experiments: {
+  //   outputModule: true
+  // },
   plugins: [
     new ModuleFederationPlugin({
       name: "ft1_app",
+      // library: { type: "module" },
       filename: "remoteEntry.js",
       exposes: {
-        './Module': './packages/ft1-app/src/app/remote-entry/entry.module.ts',
+        './Module': './packages/ft1_app/src/app/remote-entry/entry.module.ts',
       },
       shared: {
         "@angular/core": { singleton: true, strictVersion: true },
         "@angular/common": { singleton: true, strictVersion: true },
         "@angular/common/http": { singleton: true, strictVersion: true },
         "@angular/router": { singleton: true, strictVersion: true },
+        // '@angular/forms': { singleton: true, strictVersion: true, requiredVersion: 'auto' },
+        // 'rxjs': { singleton: true, strictVersion: true, requiredVersion: 'auto' },
+        // 'rxjs/operators': { singleton: true, strictVersion: true, requiredVersion: '~6.6.0' },
         ...sharedMappings.getDescriptors(),
       },
     }),

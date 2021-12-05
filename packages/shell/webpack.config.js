@@ -12,18 +12,20 @@ const path = require("path");
 * This NX_TSCONFIG_PATH environment variable is set by the @nrwl/angular:webpack-browser and it contains
 * the location of the generated temporary tsconfig file.
 */
-const tsConfigPath = process.env.NX_TSCONFIG_PATH ?? path.join(__dirname, '../../tsconfig.base.json');
+//const tsConfigPath = process.env.NX_TSCONFIG_PATH ?? path.join(__dirname, '../../tsconfig.base.json');
 
 const workspaceRootPath = path.join(__dirname, '../../');
 const sharedMappings = new mf.SharedMappings();
-sharedMappings.register(tsConfigPath, [
-  /* mapped paths to share */
-], workspaceRootPath);
+console.log(sharedMappings)
+sharedMappings.register(path.join(__dirname, './tsconfig.json'), [
+  workspaceRootPath,
+]);
 
 module.exports = {
   output: {
     uniqueName: "shell",
-    publicPath: "auto",
+    publicPath: "http://localhost:4200/",
+    scriptType: 'text/javascript'
   },
   optimization: {
     runtimeChunk: false,
@@ -38,13 +40,15 @@ module.exports = {
     new ModuleFederationPlugin({
       remotes: {
     		"ft1_app": 'ft1_app@http://localhost:4201/remoteEntry.js',
-
       },
       shared: {
         "@angular/core": { singleton: true, strictVersion: true },
         "@angular/common": { singleton: true, strictVersion: true },
         "@angular/common/http": { singleton: true, strictVersion: true },
         "@angular/router": { singleton: true, strictVersion: true },
+        // '@angular/forms': { singleton: true, strictVersion: true, requiredVersion: 'auto' },
+        // 'rxjs': { singleton: true, strictVersion: true, requiredVersion: 'auto' },
+        // 'rxjs/operators': { singleton: true, strictVersion: true, requiredVersion: '~6.6.0' },
         ...sharedMappings.getDescriptors(),
       },
     }),

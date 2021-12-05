@@ -20,7 +20,7 @@
     "noFallthroughCasesInSwitch": true,
     "experimentalDecorators": true,
     "moduleResolution": "node",
-    "module": "es2020"
+    "module": "es2020",
   },
   "angularCompilerOptions": {
     "strictInjectionParameters": true,

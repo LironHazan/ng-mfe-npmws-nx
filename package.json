@@ -2,11 +2,14 @@
   "name": "my-workspaces-playground-project",
   "workspaces": [
     "packages/shell",
-    "packages/ft1-app"
+    "packages/ft1_app"
   ],
   "dependencies": {
     "@angular-architects/module-federation": "^12.5.3",
     "ws": "^8.3.0"
+  },
+  "resolutions": {
+    "webpack": "^5.0.0"
   },
   "devDependencies": {
     "@nrwl/angular": "^13.2.3",

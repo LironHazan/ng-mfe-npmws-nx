@@ -1,10 +1,10 @@
 {
   "version": 2,
   "projects": {
-    "ft1-app": {
+    "ft1_app": {
       "projectType": "application",
-      "root": "packages/ft1-app",
-      "sourceRoot": "packages/ft1-app/src",
+      "root": "packages/ft1_app",
+      "sourceRoot": "packages/ft1_app/src",
       "prefix": "my-workspaces-playground-project",
       "targets": {
         "build": {
@@ -13,22 +13,22 @@
             "{options.outputPath}"
           ],
           "options": {
-            "outputPath": "dist/packages/ft1-app",
-            "index": "packages/ft1-app/src/index.html",
-            "main": "packages/ft1-app/src/main.ts",
-            "polyfills": "packages/ft1-app/src/polyfills.ts",
-            "tsConfig": "packages/ft1-app/tsconfig.app.json",
+            "outputPath": "dist/packages/ft1_app",
+            "index": "packages/ft1_app/src/index.html",
+            "main": "packages/ft1_app/src/main.ts",
+            "polyfills": "packages/ft1_app/src/polyfills.ts",
+            "tsConfig": "packages/ft1_app/tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "assets": [
-              "packages/ft1-app/src/favicon.ico",
-              "packages/ft1-app/src/assets"
+              "packages/ft1_app/src/favicon.ico",
+              "packages/ft1_app/src/assets"
             ],
             "styles": [
-              "packages/ft1-app/src/styles.scss"
+              "packages/ft1_app/src/styles.scss"
             ],
             "scripts": [],
             "customWebpackConfig": {
-              "path": "packages/ft1-app/webpack.config.js"
+              "path": "packages/ft1_app/webpack.config.js"
             }
           },
           "configurations": {
@@ -47,13 +47,13 @@
               ],
               "fileReplacements": [
                 {
-                  "replace": "packages/ft1-app/src/environments/environment.ts",
-                  "with": "packages/ft1-app/src/environments/environment.prod.ts"
+                  "replace": "packages/ft1_app/src/environments/environment.ts",
+                  "with": "packages/ft1_app/src/environments/environment.prod.ts"
                 }
               ],
               "outputHashing": "all",
               "customWebpackConfig": {
-                "path": "packages/ft1-app/webpack.prod.config.js"
+                "path": "packages/ft1_app/webpack.prod.config.js"
               }
             },
             "development": {
@@ -71,10 +71,10 @@
           "executor": "@nrwl/angular:webpack-server",
           "configurations": {
             "production": {
-              "browserTarget": "ft1-app:build:production"
+              "browserTarget": "ft1_app:build:production"
             },
             "development": {
-              "browserTarget": "ft1-app:build:development"
+              "browserTarget": "ft1_app:build:development"
             }
           },
           "defaultConfiguration": "development",
@@ -85,25 +85,25 @@
         "extract-i18n": {
           "executor": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "ft1-app:build"
+            "browserTarget": "ft1_app:build"
           }
         },
         "lint": {
           "executor": "@nrwl/linter:eslint",
           "options": {
             "lintFilePatterns": [
-              "packages/ft1-app/src/**/*.ts",
-              "packages/ft1-app/src/**/*.html"
+              "packages/ft1_app/src/**/*.ts",
+              "packages/ft1_app/src/**/*.html"
             ]
           }
         },
         "test": {
           "executor": "@nrwl/jest:jest",
           "outputs": [
-            "coverage/packages/ft1-app"
+            "coverage/packages/ft1_app"
           ],
           "options": {
-            "jestConfig": "packages/ft1-app/jest.config.js",
+            "jestConfig": "packages/ft1_app/jest.config.js",
             "passWithNoTests": true
           }
         }
@@ -218,7 +218,7 @@
           "executor": "@nrwl/workspace:run-commands",
           "options": {
             "commands": [
-              "nx serve ft1-app",
+              "nx serve ft1_app",
               "nx serve shell"
             ]
           }

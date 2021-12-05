@@ -3,7 +3,8 @@
   "compilerOptions": {
     "outDir": "../../dist/out-tsc",
     "types": [],
-    "experimentalDecorators": true
+    "experimentalDecorators": true,
+    "lib": [ "es2020", "dom" ]
   },
   "files": [
     "src/main.ts",
