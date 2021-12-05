@@ -59,4 +59,4 @@ CookBook:
 Issues to follow:
 - https://github.com/nrwl/nx/issues/7862
 - manually added "baseUrl": "packages" in base ts config
-
+- https://github.com/nrwl/nx/issues/1777

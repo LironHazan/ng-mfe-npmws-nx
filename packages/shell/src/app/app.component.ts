@@ -8,12 +8,15 @@ import {SharedDataAccess} from "../../../shared/data-access/src";
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-  title = 'host-app';
+  counter = 0;
   constructor(private messenger: SharedDataAccess<{}>) {
   }
 
   ngOnInit(): void {
     this.messenger.register().subscribe((message) => {
+      if (Object.keys(message.data).length > 0) {
+        this.counter++
+      }
       console.log(message);
     })
 
