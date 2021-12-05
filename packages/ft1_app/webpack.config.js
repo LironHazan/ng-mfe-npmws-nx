@@ -16,8 +16,12 @@ const path = require("path");
 
 const workspaceRootPath = path.join(__dirname, '../../');
 const sharedMappings = new mf.SharedMappings();
-sharedMappings.register(path.join(__dirname, './tsconfig.json'), [
-  workspaceRootPath
+// sharedMappings.register(path.join(__dirname, './tsconfig.json'), [
+//   workspaceRootPath,
+// ]);
+
+sharedMappings.register(path.join(__dirname, '../../tsconfig.base.json'), [
+  '@my-workspaces-playground-project/shared/data-access',
 ]);
 
 console.log(sharedMappings)

@@ -9,8 +9,8 @@ Playground repo for getting a better grasp of combining:
 And see if combining the 3 could fit my current needs.
 
 Goals:
-1. Have feature apps with own package json for version mgmt controll when publishing 
-to npm / artifactory.
+1. Have feature apps with own package json for version mgmt control when publishing 
+to npm / artifactory. will check out "generatePackageJson": true
 2. Development: using nx - have a command which starts the shell and a specific ft app.
 3. Build: using nx configure building the shared vendors - e.g. the framework.
 
@@ -55,3 +55,8 @@ CookBook:
 - Include package.json file with each app version and dependencies for future publishing
 - Tweak the ts configs
 - Serve both: ``nx run shell:serve-mfe``
+
+Issues to follow:
+- https://github.com/nrwl/nx/issues/7862
+- manually added "baseUrl": "packages" in base ts config
+

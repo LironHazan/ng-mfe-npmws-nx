@@ -1,8 +1,13 @@
 import { Component } from '@angular/core';
+import {SharedDataAccess} from "../../../../shared/data-access/src";
+// import {SharedDataAccess} from "@my-workspaces-playground-project/shared/data-access";
 
 @Component({
   selector: 'my-workspaces-playground-project-ft1-app-entry',
-  template: `<div class="remote-entry"><h2>ft1-app's Remote Entry Component</h2></div>`,
+  template: `<div class="remote-entry">
+    <h2>ft1-app's Remote Entry Component</h2>
+    <button (click)="sendMessage()"> ping </button>
+  </div>`,
   styles: [`
   .remote-entry {
     background-color: #143055;
@@ -10,4 +15,10 @@ import { Component } from '@angular/core';
     padding: 5px;
   }`]
 })
-export class RemoteEntryComponent {}
+export class RemoteEntryComponent {
+  constructor(private messenger: SharedDataAccess<{}>) {
+  }
+  sendMessage() {
+    this.messenger.update({event: 'hello', data: {name: 'liron'}});
+  }
+}
