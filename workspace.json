@@ -110,6 +110,89 @@
       },
       "tags": []
     },
+    "reactapp": {
+      "root": "packages/reactapp",
+      "sourceRoot": "packages/reactapp/src",
+      "projectType": "application",
+      "prefix": "my-workspaces-playground-project",
+      "targets": {
+        "build": {
+          "executor": "@nrwl/web:build",
+          "outputs": [
+            "{options.outputPath}"
+          ],
+          "defaultConfiguration": "production",
+          "options": {
+            "outputPath": "dist/packages/reactapp",
+            "index": "packages/reactapp/src/index.html",
+            "main": "packages/reactapp/src/main.tsx",
+            "polyfills": "packages/reactapp/src/polyfills.ts",
+            "tsConfig": "packages/reactapp/tsconfig.app.json",
+            "assets": [
+              "packages/reactapp/src/favicon.ico",
+              "packages/reactapp/src/assets"
+            ],
+            "styles": [
+              "packages/reactapp/src/styles.scss"
+            ],
+            "scripts": [],
+            "webpackConfig": "packages/reactapp/webpack.config.js"
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "packages/reactapp/src/environments/environment.ts",
+                  "with": "packages/reactapp/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false
+            }
+          }
+        },
+        "serve": {
+          "executor": "@nrwl/web:dev-server",
+          "options": {
+            "buildTarget": "reactapp:build",
+            "hmr": true,
+            "port": 4204
+          },
+          "configurations": {
+            "production": {
+              "buildTarget": "reactapp:build:production",
+              "hmr": false
+            }
+          }
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "outputs": [
+            "{options.outputFile}"
+          ],
+          "options": {
+            "lintFilePatterns": [
+              "packages/reactapp/**/*.{ts,tsx,js,jsx}"
+            ]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": [
+            "coverage/packages/reactapp"
+          ],
+          "options": {
+            "jestConfig": "packages/reactapp/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      },
+      "tags": []
+    },
     "shared-data-access": {
       "projectType": "library",
       "root": "packages/shared/data-access",
@@ -247,7 +330,8 @@
           "options": {
             "commands": [
               "nx serve ft1_app",
-              "nx serve shell"
+              "nx serve shell",
+              "nx serve reactapp"
             ]
           }
         }

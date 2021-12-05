@@ -44,6 +44,7 @@ module.exports = {
     new ModuleFederationPlugin({
       remotes: {
     		"ft1_app": 'ft1_app@http://localhost:4201/remoteEntry.js',
+    		"reactapp": 'reactapp@http://localhost:4204/remoteEntry.js',
       },
       shared: {
         "@angular/core": { singleton: true, strictVersion: true },
