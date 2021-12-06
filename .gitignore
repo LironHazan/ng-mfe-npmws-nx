@@ -4,3 +4,4 @@ packages/feature-app/.angular
 packages/host-app/.angular
 dist
 .angular
+tmp

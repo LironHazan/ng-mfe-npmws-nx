@@ -62,6 +62,7 @@ Configuration tweaks:
 ``"cp:pkjson": "cp package.json ../../dist/packages/shell/"``
 and an npm script on the root package.json which applies the copy to all the projects 
 ``nx run-many --target=build --all && npm run --ws cp:pkjson``
+- Prefer the use of webpack's externals to exclude packing the frameworks of micro-apps
 
 Issues to follow:
 - https://github.com/nrwl/nx/issues/7862

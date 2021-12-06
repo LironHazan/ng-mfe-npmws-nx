@@ -27,6 +27,19 @@ sharedMappings.register(path.join(__dirname, '../../tsconfig.base.json'), [
 console.log(sharedMappings)
 
 module.exports = {
+  externals:{
+    rxjs: 'rxjs',
+    '@angular/common/http': 'ng.common.http',
+    '@angular/platform-browser': 'ng.platformBrowser',
+    '@angular/platform-browser-dynamic': 'ng.platformBrowserDynamic',
+    '@angular/compiler': 'ng.compiler',
+    '@angular/animations': 'ng.animations',
+    '@angular/forms': 'ng.forms',
+    // Following cannot be excluded so keep in comment
+    // '@angular/core': 'ng.core',
+    // '@angular/common': 'ng.common',
+    // '@angular/router': 'ng.router',
+  },
   output: {
     uniqueName: "ft1_app",
     publicPath: "http://localhost:4201/",

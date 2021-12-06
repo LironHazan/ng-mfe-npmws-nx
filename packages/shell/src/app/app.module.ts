@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import {RouterModule} from "@angular/router";
+import {SecondaryModule} from "./secondary/secondary.module";
 
 @NgModule({
   declarations: [
@@ -10,6 +11,7 @@ import {RouterModule} from "@angular/router";
   ],
   imports: [
     BrowserModule,
+      SecondaryModule,
     RouterModule.forRoot(
         [
           {
