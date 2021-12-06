@@ -1,5 +1,5 @@
 {
-  "name": "my-workspaces-playground-project",
+  "name": "nxe",
   "workspaces": [
     "packages/shell",
     "packages/ft1_app"

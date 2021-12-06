@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 // import {TestBoundariesService} from "shell/src/app/test-boundaries.service"; // uncomment for tags demo
 
 @Component({
-  selector: 'my-workspaces-playground-project-root',
+  selector: 'nxe-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })

@@ -27,7 +27,7 @@
           "error",
           {
             "type": "element",
-            "prefix": "my-workspaces-playground-project",
+            "prefix": "nxe",
             "style": "kebab-case"
           }
         ]
