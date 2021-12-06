@@ -45,6 +45,7 @@ module.exports = {
       remotes: {
     		"ft1_app": 'ft1_app@http://localhost:4201/remoteEntry.js',
       },
+      // library: { type: 'window', name: 'shell' },
       shared: {
         "@angular/core": { singleton: true, strictVersion: true },
         "@angular/common": { singleton: true, strictVersion: true },

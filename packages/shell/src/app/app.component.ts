@@ -1,19 +1,21 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnDestroy, OnInit} from '@angular/core';
 import {SharedDataAccess} from "../../../shared/data-access/src";
-// import {SharedDataAccess} from "@my-workspaces-playground-project/shared/data-access";
+import {Subscription} from "rxjs";
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements OnInit {
+export class AppComponent implements OnInit, OnDestroy {
   counter = 0;
+  subscription: Subscription | undefined;
   constructor(private messenger: SharedDataAccess<{}>) {
   }
 
   ngOnInit(): void {
-    this.messenger.register().subscribe((message) => {
+    this.subscription
+     = this.messenger.register().subscribe((message) => {
       if (Object.keys(message.data).length > 0) {
         this.counter++
       }
@@ -22,5 +24,7 @@ export class AppComponent implements OnInit {
 
   }
 
-
+  ngOnDestroy(): void {
+    this.subscription?.unsubscribe();
+  }
 }

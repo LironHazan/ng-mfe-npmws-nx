@@ -108,7 +108,7 @@
           }
         }
       },
-      "tags": []
+      "tags": ["scope:client"]
     },
     "shared-data-access": {
       "projectType": "library",
@@ -136,7 +136,7 @@
           }
         }
       },
-      "tags": []
+      "tags": ["scope:shared"]
     },
     "shell": {
       "projectType": "application",
@@ -252,7 +252,7 @@
           }
         }
       },
-      "tags": []
+      "tags": ["scope:admin"]
     }
   }
 }

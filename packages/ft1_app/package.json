@@ -2,6 +2,7 @@
   "name": "ft1_app",
   "version": "0.0.1",
   "scripts": {
+    "cp:pkjson": "echo copying package.json",
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",

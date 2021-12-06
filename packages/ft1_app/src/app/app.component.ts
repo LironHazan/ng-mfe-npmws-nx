@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+// import {TestBoundariesService} from "shell/src/app/test-boundaries.service"; // uncomment for tags demo
 
 @Component({
   selector: 'my-workspaces-playground-project-root',
@@ -7,4 +8,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'ft1-app';
+  // constructor(private tb: TestBoundariesService) {
+  //   this.tb.notAllowed();
+  // }
 }

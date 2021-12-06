@@ -2,6 +2,8 @@
   "name": "shell",
   "version": "0.0.1",
   "scripts": {
+    "bumpup": "npm version patch --force",
+    "cp:pkjson": "cp package.json ../../dist/packages/shell/",
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",

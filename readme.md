@@ -56,7 +56,15 @@ CookBook:
 - Tweak the ts configs
 - Serve both: ``nx run shell:serve-mfe``
 
+Configuration tweaks:
+- prefer project.json in every project rather huge workspace.json
+- In order to have the package.json copied to dist I created a script on each project e.g. --> 
+``"cp:pkjson": "cp package.json ../../dist/packages/shell/"``
+and an npm script on the root package.json which applies the copy to all the projects 
+``nx run-many --target=build --all && npm run --ws cp:pkjson``
+
 Issues to follow:
 - https://github.com/nrwl/nx/issues/7862
 - manually added "baseUrl": "packages" in base ts config
 - https://github.com/nrwl/nx/issues/1777
+- there's no schematic for adding react as micro app with module federation 
