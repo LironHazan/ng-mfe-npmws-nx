@@ -147,7 +147,7 @@
       "projectType": "application",
       "root": "packages/shell",
       "sourceRoot": "packages/shell/src",
-      "prefix": "nxe",
+      "prefix": "app",
       "targets": {
         "build": {
           "executor": "@nrwl/angular:webpack-browser",

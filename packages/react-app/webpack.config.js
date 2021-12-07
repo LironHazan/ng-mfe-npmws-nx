@@ -10,7 +10,7 @@ module.exports = (config, context) => {
             name: 'react_app',
             filename: 'remoteEntry.js',
             exposes: {
-                './App': './packages/react-app/src/app/app.tsx',
+                './App': './packages/react-app/src/main.tsx',
             },
             shared: {
                 react: { singleton: true },

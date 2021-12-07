@@ -22,8 +22,7 @@ function startsWith(prefix: string): UrlMatcher {
     WrapperComponent
   ],
   imports: [
-    BrowserModule,
-      SecondaryModule,
+    BrowserModule, SecondaryModule,
     RouterModule.forRoot(
         [
           {
@@ -33,7 +32,7 @@ function startsWith(prefix: string): UrlMatcher {
           },
           { matcher: startsWith('react_app'), component: WrapperComponent, data: { importName: 'react_app', elementName: 'react-app' }},
         ],
-        { initialNavigation: 'enabledBlocking' }
+        // { initialNavigation: 'enabledBlocking' }
     ),
   ],
   providers: [],
