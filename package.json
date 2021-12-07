@@ -2,7 +2,8 @@
   "name": "nxe",
   "workspaces": [
     "packages/shell",
-    "packages/ft1_app"
+    "packages/ft1_app",
+    "packages/react-app"
   ],
   "dependencies": {
     "@angular-architects/module-federation": "^12.5.3",
@@ -19,7 +20,9 @@
     "@nrwl/cli": "latest",
     "@nrwl/eslint-plugin-nx": "13.2.3",
     "@nrwl/linter": "13.2.3",
+    "@nrwl/react": "13.2.3",
     "@nrwl/tao": "latest",
+    "@nrwl/web": "13.2.3",
     "@nrwl/workspace": "latest",
     "@typescript-eslint/eslint-plugin": "~4.33.0",
     "@typescript-eslint/parser": "~4.33.0",

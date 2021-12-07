@@ -108,8 +108,11 @@
           }
         }
       },
-      "tags": ["scope:client"]
+      "tags": [
+        "scope:client"
+      ]
     },
+    "react-app": "packages/react-app",
     "shared-data-access": {
       "projectType": "library",
       "root": "packages/shared/data-access",
@@ -136,13 +139,15 @@
           }
         }
       },
-      "tags": ["scope:shared"]
+      "tags": [
+        "scope:shared"
+      ]
     },
     "shell": {
       "projectType": "application",
       "root": "packages/shell",
       "sourceRoot": "packages/shell/src",
-      "prefix": "nxe",
+      "prefix": "app",
       "targets": {
         "build": {
           "executor": "@nrwl/angular:webpack-browser",
@@ -247,12 +252,15 @@
           "options": {
             "commands": [
               "nx serve ft1_app",
-              "nx serve shell"
+              "nx serve shell",
+              "nx serve react-app"
             ]
           }
         }
       },
-      "tags": ["scope:admin"]
+      "tags": [
+        "scope:admin"
+      ]
     }
   }
 }

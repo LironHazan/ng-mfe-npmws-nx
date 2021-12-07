@@ -44,6 +44,7 @@ module.exports = {
     new ModuleFederationPlugin({
       remotes: {
     		"ft1_app": 'ft1_app@http://localhost:4201/remoteEntry.js',
+    		"react_app": 'react_app@http://localhost:4204/remoteEntry.js',
       },
       // library: { type: 'window', name: 'shell' },
       shared: {
