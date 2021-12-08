@@ -1,0 +1,30 @@
+{
+  "projectType": "library",
+  "root": "packages/shared/data-access",
+  "sourceRoot": "packages/shared/data-access/src",
+  "prefix": "nxe",
+  "targets": {
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": [
+        "coverage/packages/shared/data-access"
+      ],
+      "options": {
+        "jestConfig": "packages/shared/data-access/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "packages/shared/data-access/src/**/*.ts",
+          "packages/shared/data-access/src/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": [
+    "scope:shared"
+  ]
+}
