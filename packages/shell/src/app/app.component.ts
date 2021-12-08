@@ -1,4 +1,4 @@
-import {Component, OnDestroy, OnInit} from '@angular/core';
+import {ChangeDetectorRef, Component, OnDestroy, OnInit} from '@angular/core';
 import {SharedDataAccess} from "../../../shared/data-access/src";
 import {Subscription} from "rxjs";
 
@@ -11,7 +11,7 @@ export class AppComponent implements OnInit, OnDestroy {
   counter = 0;
   messageFromReactApp = '';
   subscription: Subscription | undefined;
-  constructor(private messenger: SharedDataAccess<{}>) {
+  constructor(private messenger: SharedDataAccess<{}>, private cdr: ChangeDetectorRef) {
   }
 
   ngOnInit(): void {
@@ -28,6 +28,7 @@ export class AppComponent implements OnInit, OnDestroy {
     const bc = new BroadcastChannel('test_channel');
     bc.onmessage = (ev) => {
       this.messageFromReactApp = ev.data + '_' + Math.random();
+      this.cdr.detectChanges();
     };
   }
 
