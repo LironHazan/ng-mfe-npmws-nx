@@ -6,17 +6,23 @@ import star from './star.svg';
 
 import { Route, Link } from 'react-router-dom';
 
+const channel = 'test_channel'
+
+const broadcast = () => {
+  const bc = new BroadcastChannel(channel);
+  bc.postMessage('Im uppppppp!');
+}
 
 export function App() {
 
   return (
     <div className={styles.app}>
-    {/* START: routes */}
-    {/* These routes and navigation have been generated for you */}
-    {/* Feel free to move and update them to fit your needs */}
+      I'm a React micro app!
+      <br/>
+      I live inside angular
     <br/>
-    <hr/>
     <br/>
+      <button onClick={broadcast}> Broadcast to: test_channel </button>
     <div role="navigation">
       <ul>
         <li><Link to="/">Home</Link></li>

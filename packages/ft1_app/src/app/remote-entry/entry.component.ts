@@ -3,7 +3,7 @@ import {SharedDataAccess} from "../../../../shared/data-access/src";
 // import {SharedDataAccess} from "@nxe/shared/data-access";
 
 @Component({
-  selector: 'nxe-ft1-app-entry',
+  selector: 'ft1-ft1-app-entry',
   template: `<div class="remote-entry">
     <h2>ft1-app's Remote Entry Component</h2>
     <button (click)="sendMessage()"> ping </button>

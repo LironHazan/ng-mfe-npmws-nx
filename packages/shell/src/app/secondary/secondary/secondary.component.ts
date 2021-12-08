@@ -1,15 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'nxe-secondary',
+  selector: 'shell-secondary',
   templateUrl: './secondary.component.html',
   styleUrls: ['./secondary.component.scss']
 })
-export class SecondaryComponent implements OnInit {
+export class SecondaryComponent  {
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
 
 }
