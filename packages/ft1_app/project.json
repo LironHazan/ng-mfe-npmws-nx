@@ -2,7 +2,7 @@
   "projectType": "application",
   "root": "packages/ft1_app",
   "sourceRoot": "packages/ft1_app/src",
-  "prefix": "nxe",
+  "prefix": "ft1",
   "targets": {
     "build": {
       "executor": "@nrwl/angular:webpack-browser",

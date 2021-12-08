@@ -7,6 +7,7 @@ const registry = {
 
 @Component({
   template: '<div #vc></div>',
+  styles: [`:host {height: 100%; } div { height: 100%; }`]
 })
 export class WrapperComponent implements AfterContentInit {
 

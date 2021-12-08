@@ -2,7 +2,7 @@
   "projectType": "application",
   "root": "packages/shell",
   "sourceRoot": "packages/shell/src",
-  "prefix": "app",
+  "prefix": "shell",
   "targets": {
     "build": {
       "executor": "@nrwl/angular:webpack-browser",
