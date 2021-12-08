@@ -4,7 +4,7 @@ Playground repo for getting a better grasp of combining:
 
 - npm workspaces (pkg mgmt)
 - nx (build/dev tooling)
-- wp5 module federation (enable micro frontends)
+- wp5 module federation, enable cross micro frontends, Angular + React
 
 And see if combining the 3 could fit my current needs.
 
@@ -63,6 +63,7 @@ Configuration tweaks:
 and an npm script on the root package.json which applies the copy to all the projects 
 ``nx run-many --target=build --all && npm run --ws cp:pkjson``
 - Prefer the use of webpack's externals to exclude packing the frameworks of micro-apps
+- React app ** overwriting the webpack configuration 
 
 Issues to follow:
 - https://github.com/nrwl/nx/issues/7862
