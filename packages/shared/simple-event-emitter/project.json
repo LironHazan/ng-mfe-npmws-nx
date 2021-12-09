@@ -1,0 +1,29 @@
+{
+  "root": "packages/shared/simple-event-emitter",
+  "sourceRoot": "packages/shared/simple-event-emitter/src",
+  "projectType": "library",
+  "targets": {
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": [
+        "{options.outputFile}"
+      ],
+      "options": {
+        "lintFilePatterns": [
+          "packages/shared/simple-event-emitter/**/*.ts"
+        ]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": [
+        "coverage/packages/shared/simple-event-emitter"
+      ],
+      "options": {
+        "jestConfig": "packages/shared/simple-event-emitter/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}

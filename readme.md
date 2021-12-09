@@ -68,7 +68,13 @@ and an npm script on the root package.json which applies the copy to all the pro
 - React app ** overwriting the webpack configuration 
 
 Issues to follow:
-- https://github.com/nrwl/nx/issues/7862
+
+apps reload loop: 
+- https://github.com/nrwl/nx/issues/7862 -watch this issue!!! (follow this PR: https://github.com/nrwl/nx/pull/8020)
+- https://github.com/angular-architects/module-federation-plugin/issues/96 
+- https://github.com/webpack/webpack/pull/14827
+
+
 - manually added "baseUrl": "packages" in base ts config
 - https://github.com/nrwl/nx/issues/1777
 - there's no schematic for adding react as micro app with module federation 

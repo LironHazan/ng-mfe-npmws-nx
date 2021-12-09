@@ -2,6 +2,9 @@
   "compilerOptions": {
     "baseUrl": "packages",
     "paths": {
+      "@nxe/packages/shared/simple-event-emitter": [
+        "packages/shared/simple-event-emitter/src/index.ts"
+      ],
       "@nxe/shared/data-access": [
         "packages/shared/data-access/src/index.ts"
       ]

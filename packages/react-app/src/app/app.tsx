@@ -4,12 +4,11 @@ import {Circle} from "./nested/circle";
 import Button from '@mui/material/Button';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import DataTable from "./nested/data-grid";
-
-const channel = 'test_channel'
+import {Channel, SimpleEventEmitter} from "../../../shared/simple-event-emitter/src";
 
 const broadcast = () => {
-  const bc = new BroadcastChannel(channel);
-  bc.postMessage('Im uppppppp!');
+  const channel =  SimpleEventEmitter.init(Channel.TestChannel);
+    channel.dispatch('Im uppppppp!');
 }
 
 export function App() {

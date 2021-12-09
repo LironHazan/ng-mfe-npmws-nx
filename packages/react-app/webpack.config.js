@@ -15,6 +15,7 @@ module.exports = (config, context) => {
             shared: {
                 react: { singleton: true },
                 'react-dom': { singleton: true },
+                '@nxe/shared/simple-event-emitter': { singleton: true, strictVersion: false },
             },
         })
     );
