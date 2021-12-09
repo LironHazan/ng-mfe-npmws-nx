@@ -1,5 +1,7 @@
 # ng-mfe-npmws-nx
 
+![img.png](img.png)
+
 Playground repo for getting a better grasp of combining:
 
 - npm workspaces (pkg mgmt)
