@@ -14,13 +14,7 @@ const path = require("path");
 */
 //const tsConfigPath = process.env.NX_TSCONFIG_PATH ?? path.join(__dirname, '../../tsconfig.base.json');
 
-const workspaceRootPath = path.join(__dirname, '../../');
 const sharedMappings = new mf.SharedMappings();
-console.log(sharedMappings)
-// sharedMappings.register(path.join(__dirname, './tsconfig.json'), [
-//   workspaceRootPath,
-// ]);
-
 sharedMappings.register(path.join(__dirname, '../../tsconfig.base.json'), [
   '@nxe/shared/data-access',
 ]);
@@ -40,13 +34,16 @@ module.exports = {
       ...sharedMappings.getAliases(),
     },
   },
+  experiments: {
+    outputModule: true
+  },
   plugins: [
     new ModuleFederationPlugin({
+      library: { type: "module" },
       remotes: {
-    		"ft1_app": 'ft1_app@http://localhost:4201/remoteEntry.js',
-    		"react_app": 'react_app@http://localhost:4204/remoteEntry.js',
+    		"ft1_app": 'http://localhost:4201/remoteEntry.js',
+    		"react_app": 'http://localhost:4204/remoteEntry.js',
       },
-      // library: { type: 'window', name: 'shell' },
       shared: {
         "@angular/core": { singleton: true, strictVersion: true },
         "@angular/common": { singleton: true, strictVersion: true },
@@ -54,7 +51,7 @@ module.exports = {
         "@angular/router": { singleton: true, strictVersion: true },
         // '@angular/forms': { singleton: true, strictVersion: true, requiredVersion: 'auto' },
         // 'rxjs': { singleton: true, strictVersion: true, requiredVersion: 'auto' },
-        // 'rxjs/operators': { singleton: true, strictVersion: true, requiredVersion: '~6.6.0' },
+        // 'rxjs/operators': { singleton: true, strictVersion: true, requiredVersion: 'auto' },
         ...sharedMappings.getDescriptors(),
       },
     }),

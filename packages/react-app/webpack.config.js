@@ -5,10 +5,14 @@ const path = resolve('dist/packages/react-app')
 module.exports = (config, context) => {
     config.context = process.cwd();
     config.optimization.runtimeChunk = false;
+    config.experiments = {
+        outputModule: true
+    }
     config.plugins.push(
         new ModuleFederationPlugin({
             name: 'react_app',
             filename: 'remoteEntry.js',
+            library: { type: 'module' },
             exposes: {
                 './App': './packages/react-app/src/main.tsx',
             },
@@ -19,7 +23,7 @@ module.exports = (config, context) => {
         })
     );
     config.output = {
-        path,
+        path, // will output to dist/package/react_app
         uniqueName: 'react_app',
         publicPath: 'http://localhost:4204/',
         clean: true,

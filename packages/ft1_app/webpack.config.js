@@ -24,22 +24,21 @@ sharedMappings.register(path.join(__dirname, '../../tsconfig.base.json'), [
   '@nxe/shared/data-access',
 ]);
 
-console.log(sharedMappings)
 
 module.exports = {
-  externals:{
-    rxjs: 'rxjs',
-    '@angular/common/http': 'ng.common.http',
-    '@angular/platform-browser': 'ng.platformBrowser',
-    '@angular/platform-browser-dynamic': 'ng.platformBrowserDynamic',
-    '@angular/compiler': 'ng.compiler',
-    '@angular/animations': 'ng.animations',
-    '@angular/forms': 'ng.forms',
-    // Following cannot be excluded so keep in comment
-    // '@angular/core': 'ng.core',
-    // '@angular/common': 'ng.common',
-    // '@angular/router': 'ng.router',
-  },
+  // externals:{
+  //   rxjs: 'rxjs',
+  //   '@angular/common/http': 'ng.common.http',
+  //   '@angular/platform-browser': 'ng.platformBrowser',
+  //   '@angular/platform-browser-dynamic': 'ng.platformBrowserDynamic',
+  //   '@angular/compiler': 'ng.compiler',
+  //   '@angular/animations': 'ng.animations',
+  //   '@angular/forms': 'ng.forms',
+  //   // Following cannot be excluded so keep in comment
+  //   // '@angular/core': 'ng.core',
+  //   // '@angular/common': 'ng.common',
+  //   // '@angular/router': 'ng.router',
+  // },
   output: {
     uniqueName: "ft1_app",
     publicPath: "http://localhost:4201/",
@@ -53,13 +52,13 @@ module.exports = {
       ...sharedMappings.getAliases(),
     },
   },
-  // experiments: {
-  //   outputModule: true
-  // },
+  experiments: {
+    outputModule: true
+  },
   plugins: [
     new ModuleFederationPlugin({
       name: "ft1_app",
-      // library: { type: "module" },
+      library: { type: "module" },
       filename: "remoteEntry.js",
       exposes: {
         './Module': './packages/ft1_app/src/app/remote-entry/entry.module.ts',
@@ -69,9 +68,6 @@ module.exports = {
         "@angular/common": { singleton: true, strictVersion: true },
         "@angular/common/http": { singleton: true, strictVersion: true },
         "@angular/router": { singleton: true, strictVersion: true },
-        // '@angular/forms': { singleton: true, strictVersion: true, requiredVersion: 'auto' },
-        // 'rxjs': { singleton: true, strictVersion: true, requiredVersion: 'auto' },
-        // 'rxjs/operators': { singleton: true, strictVersion: true, requiredVersion: '~6.6.0' },
         ...sharedMappings.getDescriptors(),
       },
     }),
