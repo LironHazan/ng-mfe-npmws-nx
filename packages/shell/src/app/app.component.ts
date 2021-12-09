@@ -1,6 +1,7 @@
 import {ChangeDetectorRef, Component, OnDestroy, OnInit} from '@angular/core';
 import {SharedDataAccess} from "../../../shared/data-access/src";
 import {Subscription} from "rxjs";
+import {Channel, SimpleEventEmitter} from "../../../shared/simple-event-emitter/src";
 
 @Component({
   selector: 'shell-root',
@@ -25,11 +26,11 @@ export class AppComponent implements OnInit, OnDestroy {
     })
 
     // Using message bus communication
-    const bc = new BroadcastChannel('test_channel');
-    bc.onmessage = (ev) => {
-      this.messageFromReactApp = ev.data + '_' + Math.random();
+    const channel =  SimpleEventEmitter.init(Channel.TestChannel);
+    channel.subscribe((data: unknown) => {
+      this.messageFromReactApp = data + '_' + Math.random();
       this.cdr.detectChanges();
-    };
+    })
   }
 
   ngOnDestroy(): void {

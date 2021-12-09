@@ -23,6 +23,7 @@ console.log(sharedMappings)
 
 sharedMappings.register(path.join(__dirname, '../../tsconfig.base.json'), [
   '@nxe/shared/data-access',
+  '@nxe/shared/simple-event-emitter',
 ]);
 
 module.exports = {
