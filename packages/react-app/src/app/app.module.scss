@@ -1,10 +1,20 @@
 .app {
   font-family: sans-serif;
-  background: lavender;
   height: 100%;
   padding: 20px;
+  background: #fff;
 }
 
+.routerlink {
+  padding: 8px
+}
+.header {
+  display: flex;
+  align-items: center;
+}
+.transIc {
+  transform: translateX(5px);
+}
 .app :global(.gutter-left) {
   margin-left: 9px;
 }

@@ -1,10 +1,9 @@
-
 import styles from './app.module.scss';
-
-import { ReactComponent as Logo } from './logo.svg';
-import star from './star.svg';
-
 import { Route, Link } from 'react-router-dom';
+import {Circle} from "./nested/circle";
+import Button from '@mui/material/Button';
+import FavoriteIcon from '@mui/icons-material/Favorite';
+import DataTable from "./nested/data-grid";
 
 const channel = 'test_channel'
 
@@ -17,33 +16,40 @@ export function App() {
 
   return (
     <div className={styles.app}>
-      I'm a React micro app!
-      <br/>
-      I live inside angular
-    <br/>
-    <br/>
-      <button onClick={broadcast}> Broadcast to: test_channel </button>
+      <div className={styles.header}>
+          <div> I'm a React micro app! I live inside Angular
+          </div>
+          <FavoriteIcon className={styles.transIc}/>
+          <div className={styles.transIc}></div>
+      </div>
+        <Button variant="text" color="primary" onClick={broadcast}>
+            Broadcast to: test_channel
+        </Button>
     <div role="navigation">
       <ul>
-        <li><Link to="/">Home</Link></li>
-        <li><Link to="/page-2">Page 2</Link></li>
+        <li><Link to="/react_app">Home</Link></li>
+        <li><Link to="/react_app/page-2">Page 2</Link></li>
       </ul>
     </div>
     <Route
-      path="/"
+      path="/react_app"
       exact
       render={() => (
-        <div>This is the generated root route. <Link to="/page-2">Click here for page 2.</Link></div>
+        <div>
+            <Link to="/react_app/page-2">Click here for page 2.</Link>
+        </div>
       )}
     />
     <Route
-      path="/page-2"
+      path="/react_app/page-2"
       exact
       render={() => (
-        <div><Link to="/">Click here to go back to root page.</Link></div>
+        <div>
+            <div className={styles.routerlink}> <Link to="/react_app">Click here to go back to root page.</Link> </div>
+            <DataTable/>
+        </div>
       )}
     />
-    {/* END: routes */}
     </div>
   );
 
