@@ -7,6 +7,11 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.apps {
+  display: flex;
+  width: 500px;
+  justify-content: space-evenly;
+}
 .apps-container {
   height: 100%;
 }
@@ -41,37 +46,9 @@ p {
   margin: 0 16px;
 }
 
-.toolbar #twitter-logo {
-  height: 40px;
-  margin: 0 8px;
-}
-
-.toolbar #youtube-logo {
-  height: 40px;
-  margin: 0 16px;
-}
-
-.toolbar #twitter-logo:hover,
-.toolbar #youtube-logo:hover {
-  opacity: 0.8;
-}
-
 .content {
   height: 100%;
   background: lightgray;
-}
-
-svg.material-icons {
-  height: 24px;
-  width: auto;
-}
-
-svg.material-icons:not(:last-child) {
-  margin-right: 8px;
-}
-
-.card svg.material-icons path {
-  fill: #888;
 }
 
 .card-container {
@@ -135,12 +112,16 @@ svg.material-icons:not(:last-child) {
 a,
 a:visited,
 a:hover {
-  color: #1976d2;
+  color: #fff;
   text-decoration: none;
 }
 
+.apps-routes {
+  display: flex;
+}
+
 a:hover {
-  color: #125699;
+  color: #fff;
 }
 
 

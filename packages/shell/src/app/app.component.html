@@ -2,19 +2,19 @@
 
 <!-- Toolbar -->
 <div class="toolbar" role="banner">
-  Host APP Header
+  <div> Host APP Header</div>
+  <div class="apps-container">
+    <ul class="apps">
+      <li><a routerLink="/ft1_app">Angular app {{ counter }} </a></li>
+      <li><a routerLink="/react_app">React app {{ messageFromReactApp }}</a></li>
+      <li><a routerLink="/mixed">Mixed</a></li>
+    </ul>
+    </div>
 </div>
 
 
 
 <div class="content" role="main">
-  <shell-secondary></shell-secondary>
-  <div class="apps-container">
-    <ul>
-      <li><a routerLink="/ft1_app">Render ft1_app {{ counter }} </a></li>
-      <li><a routerLink="/react_app">Render react_app {{ messageFromReactApp }}</a></li>
-    </ul>
-    <router-outlet></router-outlet>
-  </div>
-
+<!--  <shell-secondary></shell-secondary>-->
+  <router-outlet></router-outlet>
 </div>

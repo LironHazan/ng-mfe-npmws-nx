@@ -22,7 +22,6 @@ export class AppComponent implements OnInit, OnDestroy {
       if (Object.keys(message.data).length > 0) {
         this.counter++
       }
-      console.log(message);
     })
 
     // Using message bus communication

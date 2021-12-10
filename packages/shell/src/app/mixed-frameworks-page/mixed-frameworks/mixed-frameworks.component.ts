@@ -1,13 +1,12 @@
 import {ChangeDetectorRef, Component, OnInit} from '@angular/core';
 import {Channel, SimpleEventEmitter} from "../../../../../shared/simple-event-emitter/src";
-import {SharedDataAccess} from "../../../../../shared/data-access/src";
 
 @Component({
-  selector: 'shell-secondary',
-  templateUrl: './secondary.component.html',
-  styleUrls: ['./secondary.component.scss']
+  selector: 'shell-mixed-frameworks',
+  templateUrl: './mixed-frameworks.component.html',
+  styleUrls: ['./mixed-frameworks.component.scss']
 })
-export class SecondaryComponent implements OnInit {
+export class MixedFrameworksComponent implements OnInit {
 
   constructor(private cdr: ChangeDetectorRef) {}
 
