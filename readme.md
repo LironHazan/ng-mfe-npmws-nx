@@ -1,9 +1,8 @@
 # ng-mfe-npmws-nx
 
-![img.png](img.png)
-
 Playground repo for getting a better grasp of combining:
 
+![img.png](image.png)
 - npm workspaces (pkg mgmt)
 - nx (build/dev tooling)
 - wp5 module federation, enable cross micro frontends, Angular + React
