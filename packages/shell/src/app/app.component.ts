@@ -22,12 +22,11 @@ export class AppComponent implements OnInit, OnDestroy {
       if (Object.keys(message.data).length > 0) {
         this.counter++
       }
-      console.log(message);
     })
 
     // Using message bus communication
     const channel =  SimpleEventEmitter.init(Channel.TestChannel);
-    channel.subscribe((data: unknown) => {
+    channel.register((data: unknown) => {
       this.messageFromReactApp = data + '_' + Math.random();
       this.cdr.detectChanges();
     })

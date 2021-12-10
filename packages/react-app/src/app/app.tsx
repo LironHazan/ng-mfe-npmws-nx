@@ -8,7 +8,7 @@ import {Channel, SimpleEventEmitter} from "../../../shared/simple-event-emitter/
 
 const broadcast = () => {
   const channel =  SimpleEventEmitter.init(Channel.TestChannel);
-    channel.dispatch('Im uppppppp!');
+    channel.broadcast('Im uppppppp!');
 }
 
 export function App() {
