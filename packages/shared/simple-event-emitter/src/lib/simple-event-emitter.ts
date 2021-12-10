@@ -12,11 +12,11 @@ export class SimpleEventEmitter {
         return new SimpleEventEmitter();
     }
 
-    public dispatch<T>(data: T) {
+    public broadcast<T>(data: T) {
         SimpleEventEmitter._channel?.postMessage(data);
     }
 
-    public subscribe<T>(handler: (data: T) => void) {
+    public register<T>(handler: (data: T) => void) {
         if (SimpleEventEmitter._channel) {
             SimpleEventEmitter._channel.onmessage = (event: MessageEvent<T>) => {
                 handler(event.data)
