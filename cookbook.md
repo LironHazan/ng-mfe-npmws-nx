@@ -20,3 +20,7 @@
 - Include package.json file with each app version and dependencies for future publishing
 - Tweak the ts configs 
 - Serve both: ``nx run shell:serve-mfe``
+
+### NX useful commands:
+- move e2e into tested project: ```nx g @nrwl/workspace:move --project ng-app-t
+  wo-e2e ng-app-two```

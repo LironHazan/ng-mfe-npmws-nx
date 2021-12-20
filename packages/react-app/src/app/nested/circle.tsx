@@ -1,5 +1,6 @@
+import {FC} from "react";
 
-export const Circle = () => {
+export const Circle: FC = (): JSX.Element => {
     return (
         <svg width="50" height="50" xmlns="http://www.w3.org/2000/svg">
             <circle cx="10" cy="10" r="5" fill="none" stroke="purple"/>
