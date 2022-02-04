@@ -77,3 +77,11 @@ apps reload loop:
 - manually added "baseUrl": "packages" in base ts config
 - https://github.com/nrwl/nx/issues/1777
 - there's no schematic for adding react as micro app with module federation 
+
+
+Dev container image:
+
+``docker build -t frontends-container:latest -f Dockerfile .``
+
+Run: 
+```docker run -d -p 8080:80 frontends-container:latest```
