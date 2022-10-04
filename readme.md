@@ -1,5 +1,27 @@
 # ng-mfe-npmws-nx
 
+A Micro frontends playground repo, most of the "heavy lifting" research was done on a real code base
+which led to more edgy cases. 
+
+My opinion: I wouldn't recommend starting a new project as a micro frontends first (and wouldn't mix different frameworks which has their own "runtime" code such as React or Angular),
+In case your organisation structure forces you to have micro frontends it really depends of the isolation level of each module (app), when there are no dependencies between apps it's easier to go for a configuration approach of single versioning monorepo and module federation, or another way is to design ahead a structure in which each app could run independently but have a "root" app which consumes each app as a module/library (not an app) and when starting that up all parts plays well - such solution only fits single framework not mixture and based on routes but if you'll have a team which do not have their own page, just adding features in other teams pages - you'll create an overhead and there's no perfect solution no matter which approach, so generally yeah, I'm not forward micro-frontends. 
+
+
+Relevant --> With i-frames (local)
+- have the hosted app in a local (same origin) iframe 
+- install my [cross docs messages lib](https://www.npmjs.com/package/cross-document-messenger) for host <--> child communication
+- nice to have --> a tiny server with a basic login
+
+Irrelevant --> With module federation:
+
+My opinion:
+Module federation felt a bit flaky (there's a policy issue with web workers fetched from different origin for e.g.)
+and basically forces you to write the app parts on a certain way (which is generally good) which adds tones of overhead 
+for a huge frontend monolith with areas of coupled code (we're not leaving on a simple case scenarios), we also had some nasty versioning issues.
++Even though vite also have own federation-like plugin,
+the thought of limiting the stack to webpack isn't tempting as well...
+
+
 Playground repo for getting a better grasp of combining:
 
 ![img.png](image.png)
