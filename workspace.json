@@ -2,9 +2,10 @@
   "version": 2,
   "projects": {
     "ft1_app": "packages/ft1_app",
-    "simple-event-emitter": "packages/shared/simple-event-emitter",
     "react-app": "packages/react-app",
+    "react-as-host": "packages/react-as-host",
     "shared-data-access": "packages/shared/data-access",
-    "shell": "packages/shell"
+    "shell": "packages/shell",
+    "simple-event-emitter": "packages/shared/simple-event-emitter"
   }
 }
