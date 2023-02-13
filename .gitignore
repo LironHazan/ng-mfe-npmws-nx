@@ -5,3 +5,6 @@ packages/host-app/.angular
 dist
 .angular
 tmp
+/test-results/
+/playwright-report/
+/playwright/.cache/

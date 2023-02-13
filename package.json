@@ -30,6 +30,7 @@
     "@nrwl/tao": "latest",
     "@nrwl/web": "13.2.3",
     "@nrwl/workspace": "latest",
+    "@playwright/test": "^1.30.0",
     "@testing-library/react": "12.1.2",
     "@testing-library/react-hooks": "7.0.2",
     "@types/react": "17.0.30",
